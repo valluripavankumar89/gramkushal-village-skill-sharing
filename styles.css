@@ -1,0 +1,152 @@
+/* GramKushal Core Stylesheet
+   Designed for low-literacy villagers, rural communities, and standard users
+   High contrast, clear iconography, tactile feedback, and accessible touch targets */
+
+:root {
+  --primary-green: #16a34a;
+  --primary-green-dark: #15803d;
+  --primary-blue: #2563eb;
+  --primary-blue-dark: #1d4ed8;
+  --accent-amber: #f59e0b;
+  --accent-orange: #ea580c;
+  --surface-bg: #f8fafc;
+  --card-bg: #ffffff;
+  --text-main: #0f172a;
+  --text-muted: #475569;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: var(--surface-bg);
+  color: var(--text-main);
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+/* Picture Mode (Enlarged icons & high visual cues for uneducated users) */
+body.picture-mode-active .category-card {
+  padding: 1.5rem !important;
+  transform: scale(1.03);
+}
+
+body.picture-mode-active .category-card .w-14 {
+  width: 5rem !important;
+  height: 5rem !important;
+  font-size: 2.8rem !important;
+}
+
+body.picture-mode-active .teacher-card,
+body.picture-mode-active .learner-card {
+  border-width: 3px !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1) !important;
+}
+
+body.picture-mode-active button,
+body.picture-mode-active a {
+  font-size: 1.05rem !important;
+  padding-top: 0.85rem !important;
+  padding-bottom: 0.85rem !important;
+}
+
+/* Tactile 3D Button Effects */
+.btn-tactile {
+  transition: all 0.15s ease-in-out;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.btn-tactile:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Active navigation link */
+.nav-active {
+  background-color: #ecfdf5 !important;
+  color: #15803d !important;
+  border-bottom: 3px solid #16a34a !important;
+  font-weight: 800 !important;
+}
+
+.nav-inactive {
+  color: #475569;
+  border-bottom: 3px solid transparent;
+}
+
+.nav-inactive:hover {
+  color: #0f172a;
+  background-color: #f1f5f9;
+}
+
+/* Fee filter active */
+.active-fee {
+  background-color: #16a34a !important;
+  color: #ffffff !important;
+  border-color: #16a34a !important;
+}
+
+/* Voice Sound Wave Animation */
+.sound-wave-bar {
+  animation: soundWave 1.2s ease-in-out infinite alternate;
+}
+
+.sound-wave-bar:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.sound-wave-bar:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.sound-wave-bar:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+@keyframes soundWave {
+  0% {
+    height: 4px;
+  }
+  100% {
+    height: 22px;
+  }
+}
+
+/* Smooth Category Cards */
+.category-card {
+  user-select: none;
+}
+
+.category-card:hover {
+  border-color: #16a34a;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Accessibility focus outline */
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 3px solid #f59e0b;
+  outline-offset: 2px;
+}
